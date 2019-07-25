@@ -132,12 +132,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/portaledcahn_frontend/static'
+STATIC_URL = '/static/'
 #PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, 'portaledcahn_frontend/static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'portaledcahn_frontend/static')
 
 DISABLE_COLLECTSTATIC=1
 
+STATICFILES_FINDERS=[
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
@@ -148,3 +152,8 @@ ELASTICSEARCH_DSL = {
         'hosts': '192.168.1.3:9200'
     },
 }
+
+
+STATICFILES_DIRS = [
+    "/portaledcahn_frontend/static"
+]
