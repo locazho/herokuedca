@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'portaledcahn_frontend')
 STATICFILES_DIRS=(
-    os.path.join(STATIC_ROOT,'/static'),
+    os.path.join(BASE_DIR,'portaledcahn_frontend'),
 )"""
 STATICFILES_DIRS=(
     os.path.join(BASE_DIR,'portaledcahn_frontend/static'),
