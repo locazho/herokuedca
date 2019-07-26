@@ -20,4 +20,4 @@ from portaledcahn_frontend import urls as frontend_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(frontend_urls)),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
