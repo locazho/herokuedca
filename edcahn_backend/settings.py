@@ -122,9 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'portaledcahn_frontend')
+STATIC_ROOT = os.path.join(BASE_DIR, 'portaledcahn_frontend/static')
 STATICFILES_DIRS=(
-    os.path.join(BASE_DIR,'portaledcahn_frontend'),
+    os.path.join(BASE_DIR,'portaledcahn_frontend/static'),
 )"""
 STATICFILES_DIRS=(
     os.path.join(BASE_DIR,'portaledcahn_frontend/static'),
