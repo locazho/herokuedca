@@ -111,8 +111,13 @@
                      </button>
                   </div>
                   
-                     <div  class="metodoBusquedaContenedor anchoTotal p-2 textoAlineadoCentrado">
-                           <div class="OpcionFiltroBusqueda">
+                     <div  class="metodoBusquedaContenedor anchoTotal mt-3 mb-3 textoAlineadoCentrado ">
+                           <div class="btn-group sombraBasica" role="group" aria-label="Metodo de Busqueda" >
+                              <a href="javascript:void(0)" id="opcionProcesosContratacion" name="metodoBusqueda" metodo="proceso"  class="btn btn-primary fondoColorSecundario {% if 'proceso' == request.GET.metodo %}activo{% endif %}">Procesos de Contratación</a>
+                              <a href="javascript:void(0)" id="opcionContratos" name="metodoBusqueda" metodo="contrato"  class="btn btn-primary fondoColorSecundario {% if 'contrato' == request.GET.metodo %}activo{% endif %}">Contratos</a>
+                              <a href="javascript:void(0)" id="opcionProcesosPago" name="metodoBusqueda" metodo="pago"  class="btn btn-primary fondoColorSecundario {% if 'pago' == request.GET.metodo %}activo{% endif %}">Procesos de Pago</a>
+                               </div>
+                          <!-- <div class="OpcionFiltroBusqueda">
                                  <input type="radio" id="opcionProcesosContratacion" name="metodoBusqueda" metodo="proceso" {% if 'proceso' == request.GET.metodo %}checked{% endif %}>
                                  <label for="opcionProcesosContratacion" class="etiquetaOpcionFiltroBusqueda textoColorPrimario textoTitular2Grues">Procesos de Contratación</label>
                               </div>
@@ -123,7 +128,7 @@
                                  <div class="OpcionFiltroBusqueda">
                                        <input type="radio" id="opcionProcesosPago" name="metodoBusqueda" metodo="pago" {% if 'pago' == request.GET.metodo %}checked{% endif %} >
                                        <label for="opcionProcesosPago" class="etiquetaOpcionFiltroBusqueda textoColorPrimario ">Procesos de Pago</label>
-                                    </div>
+                                    </div>-->
                      </div>
                  
                </div>

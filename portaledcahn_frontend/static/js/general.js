@@ -1,5 +1,5 @@
 var url=window.location.origin;
-var api=`${url}/api`;
+var api=url+"/api";
 
 function ObtenerFecha(texto){
     if(texto){

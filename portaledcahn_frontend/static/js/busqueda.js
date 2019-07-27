@@ -23,11 +23,15 @@ $('.opcionFiltroBusquedaPagina').on('click',function(e){
       $('.contenedorFiltrosBusqueda').addClass('cerrado');
     }
   });
-
+/*
   $('.metodoBusquedaContenedor input[type="radio"]').on('change',function(e){
     if($(e.currentTarget).is(':checked')){
       location.href='/busqueda?q='+$('#campoBusquedaProceso').val()+'&metodo='+$(e.currentTarget).attr('metodo')
     }
+  });*/
+  $('.metodoBusquedaContenedor a[name="metodoBusqueda"]').on('click',function(e){
+    console.dir('click')
+      location.href='/busqueda?q='+$('#campoBusquedaProceso').val()+'&metodo='+$(e.currentTarget).attr('metodo');
   });
 
 $('#botonBusquedaProceso').on('click',function(e){
@@ -43,6 +47,7 @@ $('#campoBusquedaProceso').on('keydown',function(e){
   
   
   $(function () {
+    console.dir('inicio')
     switch(  ObtenerValor( 'metodo')){
       case 'contrato':
           MostrarResultados(arregloContratos)
@@ -57,6 +62,7 @@ $('#campoBusquedaProceso').on('keydown',function(e){
           MostrarResultados(arregloProcesos)
       break;
     }
+
     var columnas=[
       {
         title: "Método de Selección",
@@ -216,6 +222,7 @@ function MostrarFiltros(filtros){
 
 $('<div>',{class:''}).append()
 function MostrarResultados(datos){
+  console.dir('mostrar resultados')
   $('#listaResultadosBusqueda').html('')
   for(var i=0;i<datos.length;i++){
     AgregarResultado(datos[i]);
@@ -224,7 +231,7 @@ function MostrarResultados(datos){
 function AgregarResultado(datos){
   console.dir(datos)
   $('#listaResultadosBusqueda').append(
-    $('<div>',{class:'resultadoBusquedaProceso  transicion cajonSombreado'}).append(
+    $('<div>',{class:'resultadoBusquedaProceso  transicion cajonSombreado anchoTotal'}).append(
       $('<div>',{class:'p-1'}).append(
         $('<div>',{class:'textoTituloResultadoBusqueda'}).append(
           $('<div>',{class:'row'}).append(
