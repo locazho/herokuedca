@@ -998,6 +998,10 @@ table.tablaGeneral tbody tr:first-child{
 .panel{
 	background: transparent;
 }
+.panel.panel-default{
+	background: white;
+	border-radius: 10px;
+}
 @media only screen and (max-width:767px){
 	.panel-default > .panel-heading{
 			font-size:15px;
@@ -2237,3 +2241,94 @@ color:white;
 		line-height: 24px;
 	}
 }
+
+.introjs-helperNumberLayer{
+	background: #3B53A4!important;
+	text-shadow: unset!important;
+}
+
+
+
+.introjs-tooltipbuttons .introjs-button {
+	color:white;
+	border-radius: 17.5px;
+	text-transform: uppercase;
+	font-weight: 600;
+	text-decoration: none!important;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	box-sizing: content-box;
+	font-size: 13px;
+	font-family: 'Poppins';
+	outline: 0;
+	border:none;
+	text-shadow: unset!important;
+	padding: .3em .8em;
+}
+.introjs-button.introjs-prevbutton{
+	margin-right: 5px;
+}
+.introjs-tooltipbuttons .introjs-button.introjs-skipbutton.introjs-donebutton,.introjs-tooltipbuttons .introjs-button.introjs-skipbutton.introjs-skipbutton{
+	color:white;
+	background: #3B53A4;
+}
+.introjs-tooltipbuttons .introjs-button.introjs-skipbutton.introjs-donebutton:hover,.introjs-tooltipbuttons .introjs-button.introjs-skipbutton.introjs-donebutton:focus,
+.introjs-tooltipbuttons .introjs-button.introjs-skipbutton:hover,.introjs-tooltipbuttons .introjs-button.introjs-skipbutton:focus{
+	color:white;
+	box-shadow: 5px 0 15px 0 rgba(59, 83, 164,0.3);
+}
+
+.introjs-tooltipbuttons .introjs-button.introjs-nextbutton,.introjs-tooltipbuttons .introjs-button.introjs-prevbutton{
+	color:white;
+	background: #273F5B;
+}
+.introjs-tooltipbuttons .introjs-button.introjs-nextbutton:hover,.introjs-tooltipbuttons .introjs-button.introjs-nextbutton:focus,.introjs-tooltipbuttons .introjs-button.introjs-prevbutton:hover,.introjs-tooltipbuttons .introjs-button.introjs-prevbutton:focus{
+	color:white;
+	box-shadow: 5px 0 15px 0 rgba(39, 63, 91,0.3);
+}
+
+.introjs-tooltipbuttons .introjs-button.introjs-nextbutton.introjs-disabled,.introjs-tooltipbuttons .introjs-button.introjs-prevbutton.introjs-disabled{
+	color:white;
+	background: #c4c4c4;
+}
+.introjs-tooltipbuttons .introjs-button.introjs-nextbutton.introjs-disabled:focus,.introjs-tooltipbuttons .introjs-button.introjs-prevbutton.introjs-disabled:focus,.introjs-tooltipbuttons .introjs-button.introjs-nextbutton.introjs-disabled:hover,.introjs-tooltipbuttons .introjs-button.introjs-prevbutton.introjs-disabled:hover{
+	color:white;
+	box-shadow: unset;
+}
+/*introjs-button introjs-skipbutton introjs-donebutton
+
+.botonGeneral{
+	color:white;
+	border-radius: 17.5px;
+	padding: 6px 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+	text-decoration: none!important;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	box-sizing: content-box;
+	font-size: 13px;
+	font-family: 'Poppins';
+	
+}
+.botonGeneral.tamanoExtra{
+	padding: 8px 15px;
+	font-size: 15px;
+}
+.botonGeneral.fondoColorPrimario:hover,.botonGeneral.fondoColorPrimario:focus{
+	color:white;
+	box-shadow: 5px 0 15px 0 rgba(59, 83, 164,0.3);
+}
+.botonGeneral.fondoColorSecundario:hover,.botonGeneral.fondoColorPrimario:focus{
+	color:white;
+	box-shadow: 5px 0 15px 0 rgba(39, 63, 91,0.3);
+}*//*.fondoColorPrimario{
+	background: #3B53A4;
+}
+.fondoColorSecundario{
+	background: #273F5B;
+}*/

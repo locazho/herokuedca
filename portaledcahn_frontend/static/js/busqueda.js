@@ -182,6 +182,8 @@ $('#campoBusquedaProceso').on('keydown',function(e){
     $('#quitarFiltros').on('click',function(e){
       listaElastica.clean();
     });
+
+    VerificarIntroduccion('INTROJS_BUSQUEDA',1);
   });
 
 

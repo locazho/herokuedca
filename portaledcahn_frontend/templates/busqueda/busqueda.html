@@ -12,7 +12,7 @@
   
 {% block container %}
       <div class="container  busquedaEspaciadoHorizontal">
-         <div class="contenedorFiltrosBusqueda animated">
+         <div class="contenedorFiltrosBusqueda animated" data-step="3" data-intro="Puedes aplicar un filtro según el método de busqueda que hayas seleccionado.">
             <h4 class="textoColorPrimario tituloFiltrosMenu titularColor">
                Filtros 
                <div class="cursorMano cerrarContenedorFiltrosBusqueda" style="display:none"><i class="fas fa-times textoColorGris"></i></div>
@@ -101,7 +101,7 @@
                      <h4 class="textoColorPrimario tituloFiltrosMenu titularColor">
                            Búsqueda
                         </h4>
-                  <div class="campoAzulBusquedaPadre" >
+                  <div class="campoAzulBusquedaPadre"  data-step="1" data-intro="Según el texto que ingreses en este campo puedes buscar, filtrando por alguno de los filtros que hayas seleccionado.">
                      <input class="form-control form-control-lg campoAzulBusqueda toolTip" toolPosicio="bottom" toolTexto="Ingresa un texto a buscar" id="campoBusquedaProceso" type="text" placeholder="Busca una contratación..." title="Busca una contratación..." value="{% if request.GET.q %}{{request.GET.q}}{% endif %}">
                      <i class="fas fa-search cursorMano toolTip" toolTexto="Haz click para buscar" id="botonBusquedaProceso"></i>	
                   </div>
@@ -111,7 +111,7 @@
                      </button>
                   </div>
                   
-                     <div  class="metodoBusquedaContenedor anchoTotal mt-3 mb-3 textoAlineadoCentrado ">
+                     <div  class="metodoBusquedaContenedor anchoTotal mt-3 mb-3 textoAlineadoCentrado " data-step="2" data-intro="Puedes seleccionar un método de búsqueda para realizar un filtrado por procesos de contratación, contratos y procesos de pagos.">
                            <div class="btn-group sombraBasica" role="group" aria-label="Metodo de Busqueda" >
                               <a href="javascript:void(0)" id="opcionProcesosContratacion" name="metodoBusqueda" metodo="proceso"  class="btn btn-primary fondoColorSecundario {% if 'proceso' == request.GET.metodo %}activo{% endif %}">Procesos de Contratación</a>
                               <a href="javascript:void(0)" id="opcionContratos" name="metodoBusqueda" metodo="contrato"  class="btn btn-primary fondoColorSecundario {% if 'contrato' == request.GET.metodo %}activo{% endif %}">Contratos</a>
@@ -245,7 +245,7 @@
                </div>
             </div>
             <div class="container-fluid contenedorBusqueda pt-2 mb-5" >
-               <div class="row">
+               <div class="row" data-step="4" data-intro="Una vez que buscaste, los resultados aparecen en esta sección, según el método de búsqueda podrás acceder a diversas propiedades del resultado.">
                   <div class="col-12 col-sm-6 col-md-6 p-0">
                      <h4 class="textoColorPrimario titularColor">Resultados</h4>
                   </div>

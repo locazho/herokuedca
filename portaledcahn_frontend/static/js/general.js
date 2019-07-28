@@ -1,5 +1,47 @@
 var url=window.location.origin;
 var api=url+"/api";
+function MostrarIntroduccion(){
+    introJs().setOption("nextLabel", "Siguiente").setOption("prevLabel", "Atras").setOption("skipLabel", "SALTAR").setOption("doneLabel", "LISTO").start();
+}
+
+function VerificarIntroduccion(variable,veces){
+    var introduccion=ObtenerCookie(variable);
+    if(introduccion===null){
+        DefinirCookie(variable,(veces?veces:1) - 1,365);
+        MostrarIntroduccion();
+    }else{
+        var restantes=ObtenerNumero(introduccion);
+        if(restantes>0){
+            DefinirCookie(variable,(restantes - 1),365);
+            MostrarIntroduccion();
+        }
+    }
+}
+
+function EliminarCookie(nombre){
+    document.cookie=nombre+'=;path=/;Max-Age=0';
+}
+function ObtenerCookie(nombre){
+    var vs = document.cookie.split(';');
+    if(vs.length>0){
+      for(let i=0;i<vs.length;i++){
+        var index=Number(vs[i].indexOf('='));
+        if(vs[i].substring(0, index).trim()==nombre){
+          return vs[i].substring(index+1);
+        }
+      }
+    }
+    return null;
+}
+function DefinirCookie(nombre,valor,dias){
+
+    document.cookie = nombre+'='+valor+'; path=/; expires='+ObtenerDuracionCookie(dias ? dias : 40);
+}
+function ObtenerDuracionCookie(dia) {
+    var d = new Date();
+    d.setTime(d.getTime() + (dia * 24 * 60 * 60 * 1000));
+    return d.toUTCString();
+}
 
 function ObtenerFecha(texto){
     if(texto){
