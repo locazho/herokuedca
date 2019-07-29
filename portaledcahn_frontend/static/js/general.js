@@ -195,7 +195,7 @@ function AsignarOrdenTabla(){
 }
 
 function AgregarToolTips(){
-    $('.toolTip').each(
+    $('[toolTexto]').each(
         function(llave,elemento){
             $(elemento).css('outline','0')
             var parametros={
@@ -222,17 +222,43 @@ function ObtenerValor( nombre, url ) {
 
 
 function AnadirSubtabla(){
-    
     $('.filaSubTabla.procesos').each(
         function(llave,elemento){
             $(elemento).on('click',function(e){
-                if(!$(e.currentTarget).hasClass('clicked')){
-                    $(e.currentTarget).after($('<tr>').append(
+                if(!$(e.currentTarget).hasClass('abierta')){
+                    $(e.currentTarget).after($('<tr class="subTabla">').append(
                         $('<td colspan="'+$(e.currentTarget).find('td').length+'">').html(
-                            '<table class="tablaGeneral cajonSombreado" > <thead> <tr> <th>Titulo</th> <th>Monto del contrato</th> <th>Fecha del contrato</th> <th>Estado</th> </tr></thead> <tbody> <tr> <td data-label="Titulo">Paga mensual</td><td data-label="Monto del contrato">1,200.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del contrato">2019-02-02 01:01:01</td><td data-label="Estado">Firmado</td></tr><tr> <td data-label="Titulo">Paga mensual</td><td data-label="Monto del contrato">1,200.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del contrato">2019-02-02 01:01:01</td><td data-label="Estado">Firmado</td></tr></tbody> </table>'
+                            '<div class="cajonSombreado"><div><h6 class="textoColorPrimario textoTitulo">Procesos de Contratación</h6></div><table class="tablaGeneral " > <thead> <tr> <th>Titulo</th> <th>Monto del contrato</th> <th>Fecha del contrato</th> <th>Estado</th> </tr></thead> <tbody> <tr> <td data-label="Titulo">Paga mensual</td><td data-label="Monto del contrato">1,200.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del contrato">2019-02-02 01:01:01</td><td data-label="Estado">Firmado</td></tr><tr> <td data-label="Titulo">Paga mensual</td><td data-label="Monto del contrato">1,200.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del contrato">2019-02-02 01:01:01</td><td data-label="Estado">Firmado</td></tr></tbody> </table></div>'
                         )
                     ));
-                    $(e.currentTarget).addClass('clicked');
+                    $(e.currentTarget).addClass('abierta');
+                }else{
+                    if($(e.currentTarget).next('.subTabla').length){
+                        $(e.currentTarget).next('.subTabla').remove();
+                        $(e.currentTarget).removeClass('abierta');
+                    }
+                    
+                }
+                
+            })
+        }
+    );
+    $('.filaSubTabla.contratos').each(
+        function(llave,elemento){
+            $(elemento).on('click',function(e){
+                if(!$(e.currentTarget).hasClass('abierta')){
+                    $(e.currentTarget).after($('<tr class="subTabla">').append(
+                        $('<td colspan="'+$(e.currentTarget).find('td').length+'">').html(
+                            '<div class="cajonSombreado"><div><h6 class="textoColorPrimario textoTitulo">Contratos</h6></div><table class="tablaGeneral " > <thead> <tr> <th>Titulo</th> <th>Monto del contrato</th> <th>Fecha del contrato</th> <th>Estado</th> </tr></thead> <tbody> <tr> <td data-label="Titulo">Paga mensual</td><td data-label="Monto del contrato">1,200.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del contrato">2019-02-02 01:01:01</td><td data-label="Estado">Firmado</td></tr><tr> <td data-label="Titulo">Paga mensual</td><td data-label="Monto del contrato">1,200.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del contrato">2019-02-02 01:01:01</td><td data-label="Estado">Firmado</td></tr></tbody> </table></div>'
+                        )
+                    ));
+                    $(e.currentTarget).addClass('abierta');
+                }else{
+                    if($(e.currentTarget).next('.subTabla').length){
+                        $(e.currentTarget).next('.subTabla').remove();
+                        $(e.currentTarget).removeClass('abierta');
+                    }
+                    
                 }
                 
             })
@@ -241,14 +267,20 @@ function AnadirSubtabla(){
     $('.filaSubTabla.pagos').each(
         function(llave,elemento){
             $(elemento).on('click',function(e){
-                if(!$(e.currentTarget).hasClass('clicked')){
-                    $(e.currentTarget).after($('<tr>').append(
+                if(!$(e.currentTarget).hasClass('abierta')){
+                    $(e.currentTarget).after($('<tr class="subTabla">').append(
                         $('<td colspan="'+$(e.currentTarget).find('td').length+'">').html(
-                            '<table class="tablaGeneral cajonSombreado" > <thead> <tr> <th>Descripción de la transacción</th> <th>Objeto de gasto</th> <th>Monto del pago</th> <th>Fecha del pago</th> </tr></thead> <tbody> <tr> <td data-label="Descripción de la transacción">paga mensual</td><td data-label="Objeto de gasto">Compra de suminitros</td><td data-label="Monto del pago">146.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del pago">2019-02-02 01:01:01</td></tr><tr> <td data-label="Descripción de la transacción">paga mensual</td><td data-label="Objeto de gasto">Compra de suminitros</td><td data-label="Monto del pago">146.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del pago">2019-02-02 01:01:01</td></tr></tbody> </table>'
+                            '<div class="cajonSombreado"><div><h6 class="textoColorPrimario textoTitulo">Pagos</h6></div><table class="tablaGeneral " > <thead> <tr> <th>Descripción de la transacción</th> <th>Objeto de gasto</th> <th>Monto del pago</th> <th>Fecha del pago</th> </tr></thead> <tbody> <tr> <td data-label="Descripción de la transacción">paga mensual</td><td data-label="Objeto de gasto">Compra de suminitros</td><td data-label="Monto del pago">146.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del pago">2019-02-02 01:01:01</td></tr><tr> <td data-label="Descripción de la transacción">paga mensual</td><td data-label="Objeto de gasto">Compra de suminitros</td><td data-label="Monto del pago">146.00 <span class="textoColorPrimario">HNL</span></td><td data-label="Fecha del pago">2019-02-02 01:01:01</td></tr></tbody> </table></div>'
                         )
                         
                     ));
-                    $(e.currentTarget).addClass('clicked');
+                    $(e.currentTarget).addClass('abierta');
+                }else{
+                    if($(e.currentTarget).next('.subTabla').length){
+                        $(e.currentTarget).next('.subTabla').remove();
+                        $(e.currentTarget).removeClass('abierta');
+                    }
+                    
                 }
                 
             })

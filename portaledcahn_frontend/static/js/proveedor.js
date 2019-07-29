@@ -27,6 +27,7 @@ $(function(){
         });
 
 
-    AsignarOrdenTabla()
-    AnadirSubtabla()
+    AsignarOrdenTabla();
+    AnadirSubtabla();
+    AgregarToolTips();
 })

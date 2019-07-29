@@ -41,4 +41,5 @@
       cambiarFiltroNumerico(evento.currentTarget);
     });
     AsignarOrdenTabla();
+    AgregarToolTips();
   })

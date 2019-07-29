@@ -1731,6 +1731,10 @@ footer a:hover{
     font-weight: 700;
     letter-spacing: 1px;
 }
+.textoTitulo{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+}
 .textoParrafoResaltado{
 	font-size:20px;
 }
@@ -2186,7 +2190,7 @@ box-shadow: 5px 0 15px 0 rgba(39, 55, 112, 0.7);
   }
   .filaSubTabla{
 	  cursor: pointer;
-  }
+	}
   .filaSubTabla:hover{
 background: #3B53A4;
 color:white;
@@ -2195,7 +2199,13 @@ color:white;
   .filaSubTabla:hover a{
 color:white;
 	}
-	
+	.filaSubTabla.abierta{
+	  background: #3B53A4;
+color:white;
+	}
+	.filaSubTabla.abierta a{
+		color:white;
+			}
 .metodoBusquedaContenedor .btn-group a{
 	padding-bottom: 0;
 	padding-top: 0;
