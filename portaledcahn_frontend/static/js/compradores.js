@@ -42,4 +42,5 @@
     });
     AsignarOrdenTabla();
     AgregarToolTips();
+    VerificarIntroduccion('INTROJS_COMPRADORES',1);
   })

@@ -44,5 +44,5 @@
     });
     AsignarOrdenTabla();
     AgregarToolTips();
-    
+    VerificarIntroduccion('INTROJS_PROVEEDORES',1);
   })
