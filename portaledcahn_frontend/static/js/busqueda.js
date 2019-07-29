@@ -231,7 +231,6 @@ function MostrarResultados(datos){
   }
 }
 function AgregarResultado(datos){
-  console.dir(datos)
   $('#listaResultadosBusqueda').append(
     $('<div>',{class:'resultadoBusquedaProceso  transicion cajonSombreado anchoTotal'}).append(
       $('<div>',{class:'p-1'}).append(
@@ -258,13 +257,13 @@ function AgregarResultado(datos){
           $('<table>',{class:''}).append(
             $('<tbody>',{class:''}).append(
               datos.ocid?$('<tr>',{class:''}).append(
-                $('<td>',{class:'tituloTablaCaracteristicas',text:'ID Proceso (OCID):'}).append(),
+                $('<td>',{class:'tituloTablaCaracteristicas',text:'ID Proceso (OCID):',toolTexto:'ocid'}).append(),
                 $('<td>',{class:'contenidoTablaCaracteristicas'}).append(
                   $('<a>',{class:'enlaceTablaGeneral',text:datos.ocid,href:'/proceso/'+datos.ocid})
                 )
               ):null,
               datos.buyerId?$('<tr>',{class:''}).append(
-                $('<td>',{class:'tituloTablaCaracteristicas',text:'Comprador:'}).append(),
+                $('<td>',{class:'tituloTablaCaracteristicas',text:'Comprador:',toolTexto:'buyer.name'}).append(),
                 $('<td>',{class:'contenidoTablaCaracteristicas'}).append(
                   $('<a>',{class:'enlaceTablaGeneral',text:datos.buyerName,href:'/comprador/'+datos.buyerId})
                 )
@@ -274,13 +273,13 @@ function AgregarResultado(datos){
                 $('<td>',{class:'contenidoTablaCaracteristicas',text:datos.status})
               ):null,
               datos.supplierId?$('<tr>',{class:''}).append(
-                $('<td>',{class:'tituloTablaCaracteristicas',text:'Proveedor:'}).append(),
+                $('<td>',{class:'tituloTablaCaracteristicas',text:'Proveedor:',toolTexto:'contracts[n].suppliers[n].name'}).append(),
                 $('<td>',{class:'contenidoTablaCaracteristicas'}).append(
                   $('<a>',{class:'enlaceTablaGeneral',text:datos.supplierName,href:'/proveedor/'+datos.supplierId})
                 )
               ):null,
               datos.dateSigned?$('<tr>',{class:''}).append(
-                $('<td>',{class:'tituloTablaCaracteristicas',text:'Fecha de Firma:'}),
+                $('<td>',{class:'tituloTablaCaracteristicas',text:'Fecha de Firma:',toolTexto:'contracts[n].dateSigned'}),
                 $('<td>',{class:'contenidoTablaCaracteristicas'}).append(
                   $('<span>',{toolTexto:'Fecha en que fue firmado el contrato por todas las partes',text:ObtenerFecha(datos.dateSigned)})
                 )

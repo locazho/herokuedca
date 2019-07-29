@@ -797,12 +797,18 @@ table.tablaGeneral th {
 			display: block;
 			margin-bottom: .625em;
  }
-	table.tablaGeneral td {
+	table.tablaGeneral >tr > td {
 		 /* border-bottom: 1px solid #ddd;
 			*/
 			display: block;
 			text-align: right;
  }
+ table.tablaGeneral > tbody >tr > td {
+	/* border-bottom: 1px solid #ddd;
+	 */
+	 display: block;
+	 text-align: right;
+}
 	table.tablaGeneral td::before {
 		 /* * aria-label has no advantage, it won't be read inside a table content: attr(aria-label);
 			*/
@@ -819,6 +825,9 @@ table.tablaGeneral th {
  .tablaGeneral.mostrarEncabezados > thead > th{
 	display: block;
 	}
+	.tablaGeneral.mostrarEncabezados > thead > tr > th{
+		display: block;
+		}
 	table.tablaGeneral.mostrarEncabezados > thead{
 		position: static;
 	}
@@ -2062,7 +2071,7 @@ width: 14px;
 cursor: pointer;
 }
 .ordenEncabezado{
-	display: inline-block;
+	display: block;
 }
 .contenedorFlechasOrden .flechaArriba{
 position: absolute;
@@ -2306,6 +2315,13 @@ color:white;
 .introjs-tooltipbuttons .introjs-button.introjs-nextbutton.introjs-disabled:focus,.introjs-tooltipbuttons .introjs-button.introjs-prevbutton.introjs-disabled:focus,.introjs-tooltipbuttons .introjs-button.introjs-nextbutton.introjs-disabled:hover,.introjs-tooltipbuttons .introjs-button.introjs-prevbutton.introjs-disabled:hover{
 	color:white;
 	box-shadow: unset;
+}
+table.alineado td{
+padding: 0;
+
+}
+table.alineado {
+	width: 100%;
 }
 /*introjs-button introjs-skipbutton introjs-donebutton
 
